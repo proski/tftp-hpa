@@ -240,7 +240,6 @@ AC_DEFUN(PA_HEADER_DEFINES,
 #include <$1>
 ],
 [
-int main()
 {
 	$2 dummy = $3;
 	return 0;
