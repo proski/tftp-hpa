@@ -300,7 +300,7 @@ typedef int socklen_t;
 void *xmalloc(size_t);
 char *xstrdup(const char *);
 
-#ifndef HAVE_BSD_SIGNAL
+#if !defined(HAVE_BSD_SIGNAL) || !HAVE_DECL_BSD_SIGNAL
 void (*bsd_signal(int, void (*)(int))) (int);
 #endif
 #ifndef HAVE_DUP2
