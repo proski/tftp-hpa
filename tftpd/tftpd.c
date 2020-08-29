@@ -1658,7 +1658,7 @@ static void tftp_recvfile(const struct formats *pf, struct tftphdr *oap, int oac
         timeout = rexmtval;
 
         if (!block && oap) {
-            ap = (struct tftphdr *)ackbuf;
+            ap = oap;
             acksize = oacklen;
         } else {
             ap = (struct tftphdr *)ackbuf;
