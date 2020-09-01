@@ -298,6 +298,7 @@ typedef int socklen_t;
 /* Prototypes for libxtra functions */
 
 void *xmalloc(size_t);
+void *xrealloc(void *, size_t);
 char *xstrdup(const char *);
 
 #if !defined(HAVE_BSD_SIGNAL) || !HAVE_DECL_BSD_SIGNAL
