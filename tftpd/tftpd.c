@@ -383,6 +383,12 @@ int main(int argc, char **argv)
     const char *pidfile = NULL;
     u_short tp_opcode;
 
+    char envtz[10];
+    time_t my_time = time(NULL);
+    struct tm *p_tm = localtime(&my_time);
+    snprintf(envtz, sizeof(envtz) - 1, "UTC%+ld", -p_tm->tm_gmtoff / 3600);
+    setenv("TZ", envtz, 0);
+
     /* basename() is way too much of a pain from a portability standpoint */
 
     p = strrchr(argv[0], '/');
