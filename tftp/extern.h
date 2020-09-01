@@ -34,6 +34,8 @@
 #ifndef RECVFILE_H
 #define RECVFILE_H
 
+extern sigjmp_buf toplevel;
+
 void tftp_recvfile(int, const char *, const char *);
 void tftp_sendfile(int, const char *, const char *);
 
